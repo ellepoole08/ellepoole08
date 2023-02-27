@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="css/if.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>A Memorable Panaroma&nbsp;</h1>
+	<h3><span class="ital"><em>Brady Street: Rooftop&nbsp;</em></span> (Ellen Poole, 2022)</h3>
+	<div class="sideBySide">
+	<img class="filmStill" onClick="onClick_DTRT_img01()" src="images/brady1.jpg" alt="Do the Right Thing">
+	<img class="filmStill" onClick="onClick_DTRT_img02()" src="images/brady2.jpg" alt="Do the Right Thing">
+	<img class="filmStill" onClick="onClick_DTRT_img03()" src="images/brady3.jpg" alt="Do the Right Thing">
+	
+	</div>
+	
+<p class="filmInfo" id="DTRT_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore eligendi nobis cum iste tempora deserunt sequi unde nesciunt officiis impedit commodi, quidem nam perspiciatis sunt, iusto, odit magnam excepturi recusandae eveniet in inventore explicabo modi. Autem nemo in vero nisi, temporibus cupiditate repellendus repellat a, ducimus, laborum facere cum doloribus?</p>
+
+<button type="button" onClick="gotoMovie()" id="gotoMovie_btn">Go to the movie</button>
+
+</body>
+<script>
+
+var gotoMovie_btn = document.getElementById("gotoMovie_btn");
+gotoMovie_btn.style.visibility = "hidden";
+
+var img01_clicked = false;
+var img02_clicked = false
+var img03_clicked = false
+
+var DTRT_text = document.getElementById("DTRT_text");
+var DTRT00 = "Brady Street: Rooftop is a series of photos taken from the rooftop of an apartment building in Milwaukee, Wisconsin on the Lower East Side. Brady St is a popular residential area, and tourist location in the city. The street is very walkable, and is lined with restaurants, bars, and shopping.";
+
+DTRT_text.innerHTML = DTRT00;
+function onClick_DTRT_img01(){DTRT_text.innerHTML = "This photo features a few of the highrise apartment buildings near Brady Street, in Milwaukee, WI on the Lower East Side. Resident of the Brady Street neighborhood enjoy being located near Lake Michigan, with access to the lakeshore and bike paths, public beaches and the Milwaukee River.";}
+
+function onClick_DTRT_img02(){DTRT_text.innerHTML = "A second photo from the Brady Street: Rooftop series depicts the skyline of the city of Milwaukee in the distance. Although the area is located in downtown Milwaukee, the Lower East Side is less urban than other areas, such as the Westown or Deer Districts. There is more green areas, and less traffic on Brady St.";}
+
+function onClick_DTRT_img03(){DTRT_text.innerHTML = "The last photo from the Brady Street: Rooftop series features the cross streets of Brady St and Cambridge Ave, which will likely look much different in a few years. There are plans to construct a hotel on the corner and tear down the former FedEx location, and a chance that Brady St will become a pedestrian walking street.";}
+
+function onClick_DTRT_img01(){
+	DTRT_text.innerHTML = DTRT00;
+	img01_clicked = true;
+	console.log("img01_clicked = " + img01_clicked);
+	revealButton();
+}
+
+function onClick_DTRT_img02(){
+	DTRT_text.innerHTML = DTRT00;
+	img02_clicked = true;
+	console.log("img02_clicked = " + img02_clicked);
+	revealButton();
+}
+
+function onClick_DTRT_img03(){
+	DTRT_text.innerHTML = DTRT00;
+	img03_clicked = true;
+	console.log("img03_clicked = " + img03_clicked);
+	revealButton();
+}
+
+function revealButton(){
+	if (img01_clicked && img02_clicked && img03_clicked){
+		console.log("REVEAL BUTTON");
+		gotoMovie_btn.style.visibility = "visible";
+	}
+}
+
+function gotoMovie(){
+	window.open("https://bradystreet.org/", "_blank");
+}
+
+</script>
+</html>

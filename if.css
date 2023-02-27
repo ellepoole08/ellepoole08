@@ -1,0 +1,17 @@
+.filmStill {
+	width: 300px;
+	background-color: #000000;
+	border-color: #000000;
+	border-style: solid;
+}
+.sideBySide {
+	display: flex;
+}
+.ital {
+}
+.filmInfo {
+	min-width: 1200px;
+	max-width: 1200px;
+	border-style: solid;
+
+}
